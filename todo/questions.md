@@ -1,12 +1,15 @@
 <h3>1. What is the concept behind Angular Evergreen?</h3>
 <h4>My Answer</h4> 
+
 > Basically, there is going to be new code introduced from a new version of Angular that won't be compatible with an older version of Angular. So, the Angular team has created automated tools, or explicit guides on how to update your code via update.angular.io. In this way, you're never left looking all over the internet for answers on how to update your code to the newest version of Angular.
 
 <h4>Book Answer</h4>
+
 > Angular Evergreen is about keeping the version of Angular up to date with the latest release. Keeping up to date is made feasible by sticking to platform fundamentals and avoiding unnecessary third-party libraries.
 
 <h3>2. Using the double-click example for reactive streams, implement the following steps using RxJS: Listen to click events from the HTML target with the `fromEvent` function. Determine if the mouse was double-clicked within a 250ms timeframe using `throttleTime`, `asyncScheduler`, `buffer`, and `filter` operators. If a double-click is detected, display an alert in the browser.</h3>
 <h4>My Answer</h4>
+
 > First, I need to import the functions that I'm going to use from RxJS.
 > 
 > To use `fromEvent`, I know that it creates an Observable that emits[1] events of a specific type coming from the given target. In our case, we need to emit a `click` event from `document`, and save the Observable to a `clicks` variable. 
@@ -28,6 +31,7 @@
 > [2] `pipe` is a method on Observable and is used to stitch together functional operators into a chain. A functional operator is a function you pass into a pipe. And, pipe returns its own Observable. i.e. Observable in, Observable out. The "pipable" operator is a **function that takes Observables** as input, and returns another Observable. Pipable operators are **the current and recommended way** of using operators since RxJS 5.5.
 
 <h4>Book Answer</h4>
+
 > Referring to the _Reactive data streams_ section, and the double-click example that is discussed in the chapter:
 > <pre><code>import { fromEvent, asyncScheduler } from 'rxjs';
 > import { buffer, filter, throttleTime } from 'rxjs/operators';
@@ -48,6 +52,7 @@
 
 <h3>3. What is NgRx, and what role does it play in an Angular application?</h3>
 <h4>My Answer</h4>
+
 > NgRx is a framework for building Redux-like (a popular React.js library) reactive applications in Angular. It leverages the Flux pattern using RxJS to enable sophisticated state management for your applications. The Flux pattern defines a series of components that manage a store that stores the state of your application via dispatchers that trigger/handle actions and view functions that read values from the store. You keep the state of your application in a store where access to the store is only possible through well-defined and decoupled functions, resulting in architecture that scales well because, in isolation, decoupled functions are easy to reason with and write automated unit tests for.
 > 
 > The following is a NgRx data flow:
@@ -85,10 +90,12 @@
 > Consider the very top of the diagram as an Observable action stream, where actions can be dispatched and acted upon as denoted by the circles. Effects and components can dispatch an action. Reducers and effects can act upon these actions to either store values in the store or trigger an interaction with the server. Selectors are leveraged by components to read values from the store.
 
 <h4>Book Answer</h4>
+
 > The NgRx library for Angular leverages the Flux pattern to enable sophisticated state management for your applications. There are some excellent reasons to use NgRx; for example, it's a great fit if you are dealing with 3+ input streams into your application. In such a scenario, the overhead of dealing with so many events makes it worthwhile to introduce a new coding paradigm to your project. However, most applications only have two input streams: REST APIs, and user input. To a lesser extent, NgRx may make sense if you are writing offline-first **Progressive Web Apps** (**PWAs**), where you may have to persist complicated state information, or architecting a niche enterprise app with similar needs.
 
 <h3>4. What is the difference between a module, a component, and a service in Angular?</h3>
 <h4>My Answer</h4>
+
 > A module is made up from one or more components, directives, services, etc. They do not control any HTML. Modules declare which components can be used by components belonging to *other* modules, which classes will be injected by the dependency injector, and which component gets bootstrapped. One, or many modules combine to make an Application. Modules breakup an application into logical pieces of code, allowing you to manage your components, and bring modularity to your application. Each module performs a single task. Denoted by `@ngModule()`.
 > 
 > A component is made up of classes where you write your logic for the page you want to display. Components will have an associated template. Components control Views (HTML). Components communicate with other components, and services to bring functionality to the application. Each component can use other components, which are declared in the same module. To use components declared in other modules, they need to be exported from this module, and the module needs to be imported. Denoted by `@Component()`.
@@ -102,6 +109,7 @@
 > Buildings can also have shared spaces by all building residents, e.g. swimming pool, tennis court, etc. These can be considered components inside of SharedModule.
 
 <h4>Book Answer</h4>
+
 > The most basic unit of an Angular app is a component. A component is the combination of a JavaScript class written in TypeScript and an Angular template written in HTML, CSS, and TypeScript. The class, and the template fit together like a jigsaw puzzle through bindings, so that they can communicate with each other. A component is the most used directive in Angular.
 > 
 > A service is a class that can be injected into other services or components via Angular's **Dependency Injection** (**DI**) mechanism.
