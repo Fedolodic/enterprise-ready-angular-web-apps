@@ -57,7 +57,7 @@
 > 
 > The following is a NgRx data flow:
 >
-> [comment]: <> (TODO: Add the NgRx data flow image here)
+> ![NgRx data flow](https://lh3.googleusercontent.com/-ZGg_oaX8mFsl0qSaeRQYJKAfdrWIo_b30bWlNZnbX8UcnQ9kdXlMUyFc46JH-pb_ZqKXBt8jRewxW3lOA3WBs8yFRXQIX0Xt_ZpCjI=s192)
 > 
 > NgRx provides libraries for:
 > * Managing global, and local state. 
@@ -85,7 +85,7 @@
 > 
 > The following is a NgRx architectural overview:
 > 
-> [comment]: <> (TODO: Add the NgRx architectural overview image here)
+> ![NgRx architectural overview](https://lh3.googleusercontent.com/uGsU9FdstvSh_eb8TrBpfn2azctbA1i0fFGyE0xrGhqwCLu9A92sVSRLXal3n7Yv90c6w4a7Dob6VCr7H5DMVwPhWexVCzIrfHi8wB65=s192)
 > 
 > Consider the very top of the diagram as an Observable action stream, where actions can be dispatched and acted upon as denoted by the circles. Effects and components can dispatch an action. Reducers and effects can act upon these actions to either store values in the store or trigger an interaction with the server. Selectors are leveraged by components to read values from the store.
 
