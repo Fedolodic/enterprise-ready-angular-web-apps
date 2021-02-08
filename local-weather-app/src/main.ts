@@ -1,5 +1,5 @@
 /* When Angular begins execution, it first loads this file
-* It configures the framework for browser use and loads the app module */
+ * It configures the framework for browser use and loads the app module */
 import { AppModule } from './app/app.module'
 import { enableProdMode } from '@angular/core'
 import { environment } from './environments/environment'
