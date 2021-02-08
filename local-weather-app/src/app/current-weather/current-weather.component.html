@@ -1,2 +1,14 @@
 <!-- This file contains the HTML template that defines the look of the component and rendering of the bindings and can be considered the View, in combination with any CSS styles used -->
-<p>current-weather works!</p>
+<div>
+  <div>
+    <span>{{current.city}}, {{current.country}} </span>
+    <span>{{current.date | date: 'fullDate'}}</span>
+  </div>
+  <div>
+    <img [src]="current.image" alt="Sun clipart">
+    <span>{{current.temperature | number: '1.0-0'}}°F (&#8457;)</span>
+  </div>
+  <div>
+    {{current.description}}
+  </div>
+</div>
