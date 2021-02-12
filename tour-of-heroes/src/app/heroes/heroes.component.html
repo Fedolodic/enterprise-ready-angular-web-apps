@@ -11,5 +11,13 @@
   <span>id: </span> {{ hero.id }}
 </div>
 <div>
-  <span>name: </span> {{ hero.name }}
+  <!-- `[(ngModel)]` is Angular's two-way binding syntax
+  Here it binds to the `hero.name` property to the HTML textbox so that data can flow *in both directions*: from the `hero.name` property to the textbox, and from the textbox back to the `hero.name`
+
+  When we added `[(ngModel)]`, our app stopped working
+  This is because although `ngModel` is a valid Angular directive, it isn't available by default
+  It belongs to the optional `FormsModule` and you must *opt-in* to using it-->
+  <label>
+    name: <input [(ngModel)]="hero.name" placeholder="name"/>
+  </label>
 </div>
