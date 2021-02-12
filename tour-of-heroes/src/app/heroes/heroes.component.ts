@@ -12,6 +12,8 @@ import { Component, OnInit } from '@angular/core';
 })
 /* Always `export` the component class so you can `import` it elsewhere ... like in the `AppModule` */
 export class HeroesComponent implements OnInit {
+  /* Add property to the `HeroesComponent` for a hero named "Windstorm" */
+  hero = 'Windstorm';
 
   constructor() { }
 
