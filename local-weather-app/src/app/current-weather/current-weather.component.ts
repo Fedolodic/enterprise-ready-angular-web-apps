@@ -10,11 +10,15 @@ import { WeatherService } from '../weather/weather.service'
   styleUrls: ['./current-weather.component.css'],
 })
 export class CurrentWeatherComponent implements OnInit {
-  current: ICurrentWeather
+  /* We add the `!` syntax for the common-ish cases where you can't guarantee that the value will be defined immediately
+   * It is an escape hatch, adn shouldn't be relied on, as it can make your code less safe
+   * A default value is usually preferred
+   * It's good to know that it exists though */
+  current!: ICurrentWeather
 
   constructor(private weatherService: WeatherService) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.weatherService
       .getCurrentWeather('Dallas', 'US')
       .subscribe((data) => (this.current = data))

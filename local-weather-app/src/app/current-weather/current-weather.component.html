@@ -6,7 +6,9 @@
   </div>
   <div>
     <img [src]="current.image" alt="Sun clipart">
-    <span>{{current.temperature | number: '1.0-0'}}°F (&#8457;)</span>
+    <span>{{current.temperature | number: '1.0-0'}}°F
+      <!--(&#8457;)-->
+    </span>
   </div>
   <div>
     {{current.description}}
