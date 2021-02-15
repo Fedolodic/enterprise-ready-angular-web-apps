@@ -1,5 +1,10 @@
-<!-- This file contains the HTML template that defines the look of the component and rendering of the bindings and can be considered the View, in combination with any CSS styles used -->
-<div>
+<!-- This file contains the HTML template that defines the look of the component and rendering of the bindings and can be considered the View, in combination with any CSS styles used
+
+Below we are implementing null guarding with *ngIf, a structural directive, i.e. this stops Angular from traversing the DOM element tree beyond a falsy statement -->
+<div *ngIf="!current">
+  no data
+</div>
+<div *ngIf="current">
   <div>
     <span>{{current.city}}, {{current.country}} </span>
     <span>{{current.date | date: 'fullDate'}}</span>
