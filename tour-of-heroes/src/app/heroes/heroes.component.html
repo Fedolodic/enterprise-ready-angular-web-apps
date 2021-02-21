@@ -7,8 +7,13 @@
   The syntax in this example is as follows:
   * `<li>` is the host element
   * `heroes` holds the mock heroes list from the `HeroesComponent` class, the mock heroes list
-  * `hero` holds the current hero object for each iteration through the list -->
-  <li *ngFor="let hero of heroes">
+  * `hero` holds the current hero object for each iteration through the list
+
+  The event binding listens for the button's click events and calls the component's `onSelect()` method whenever a click occurs
+  i.e. The parentheses around `click` tell Angular to listen for the `<li>` element's `click` event, then when a user clicks in the `<li>`, Angular executes the `onSelect(hero)` expression
+  This is an example of Angular's event binding syntax
+  `(click)` is the target event name, and `onSelect(hero)` is the template statement -->
+  <li *ngFor="let hero of heroes" (click)="onSelect(hero)" )>
     <span class="badge">{{ hero.id }}</span> {{ hero.name }}
   </li>
 </ul>
