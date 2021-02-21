@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from '../hero'
+import { HEROES } from "../mock-heroes";
 
 /* The CLI generated these 3 metadata properties:
 *   1. `selector` - the component's CSS element selector
@@ -18,6 +19,8 @@ export class HeroesComponent implements OnInit {
     id: 1,
     name: 'Windstorm'
   }
+  /* Defined a component property called `heroes` to expose the `HEROES` array for binding */
+  heroes = HEROES
 
   constructor() { }
 
