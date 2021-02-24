@@ -28,8 +28,29 @@ interface ICurrentWeatherData {
 @Injectable({
   providedIn: 'root',
 })
-export class WeatherService {
+export class WeatherService implements IWeatherService {
   constructor(private httpClient: HttpClient) {}
+
+  private static transformToICurrentWeather(data: ICurrentWeatherData): ICurrentWeather {
+    return {
+      city: data.name,
+      country: data.sys.country,
+      /* JavaScript's timestamp is in milliseconds, but the server value is in seconds, so a simple multiplication during the transformation is required (the *1000 part)*/
+      date: data.dt * 1000,
+      image: `http://openweathermap.org/img/w/${data.weather[0].icon}.png`,
+      temperature: WeatherService.convertKelvinToFahrenheit(data.main.temp),
+      description: data.weather[0].description,
+    }
+  }
+
+  /* Arguments could be made that this conversion is a View concern, or that at this time we only need to display Fahrenheit and it's part of the job of the weather service to convert the units
+   * The ultimate implementation is to write a custom Angular pipe and apply it in the template
+   * A pipe can easily bind with the planned toggle button as well
+   *
+   * However, at this time, we only need to display Fahrenheit, and it's best not to over-engineer a solution */
+  private static convertKelvinToFahrenheit(kelvin: number): number {
+    return (kelvin * 9) / 5 - 459.67
+  }
 
   getCurrentWeather(city: string, country: string): Observable<ICurrentWeather> {
     /* We could of written our GET request like this:
@@ -53,25 +74,8 @@ export class WeatherService {
       )
       .pipe(map((data) => WeatherService.transformToICurrentWeather(data)))
   }
+}
 
-  private static transformToICurrentWeather(data: ICurrentWeatherData): ICurrentWeather {
-    return {
-      city: data.name,
-      country: data.sys.country,
-      /* JavaScript's timestamp is in milliseconds, but the server value is in seconds, so a simple multiplication during the transformation is required (the *1000 part)*/
-      date: data.dt * 1000,
-      image: `http://openweathermap.org/img/w/${data.weather[0].icon}.png`,
-      temperature: WeatherService.convertKelvinToFahrenheit(data.main.temp),
-      description: data.weather[0].description,
-    }
-  }
-
-  /* Arguments could be made that this conversion is a View concern, or that at this time we only need to display Fahrenheit and it's part of the job of the weather service to convert the units
-   * The ultimate implementation is to write a custom Angular pipe and apply it in the template
-   * A pipe can easily bind with the planned toggle button as well
-   *
-   * However, at this time, we only need to display Fahrenheit, and it's best not to over-engineer a solution */
-  private static convertKelvinToFahrenheit(kelvin: number): number {
-    return (kelvin * 9) / 5 - 459.67
-  }
+export interface IWeatherService {
+  getCurrentWeather(city: string, country: string): Observable<ICurrentWeather>
 }
