@@ -1,10 +1,13 @@
 import { AppComponent } from './app.component'
 import { TestBed } from '@angular/core/testing'
+import { createComponentMock } from 'angular-unit-test-helper'
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [AppComponent],
+      /* Declarations allow us to provide all components necessary to render the component under test
+       * i.e. they build component classes, along with their template logic, to facilitate testing */
+      declarations: [AppComponent, createComponentMock('CurrentWeatherComponent')],
     }).compileComponents()
   })
 
@@ -24,8 +27,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent)
     fixture.detectChanges()
     const compiled = fixture.nativeElement
-    expect(compiled.querySelector('.content span').textContent).toContain(
-      'local-weather-app app is running!'
-    )
+    expect(compiled.querySelector('h1').textContent).toContain('Weather 24/7')
   })
 })
