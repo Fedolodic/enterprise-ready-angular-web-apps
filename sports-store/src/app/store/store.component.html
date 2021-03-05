@@ -5,8 +5,19 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-3 bg-info p-2 text-white">
-      {{ categories.length }} Categories
+    <div class="col-3 p-2">
+      <!-- Here we have an event binding that invokes the component's `changeCategory` method when the button is clicked
+      No argument is provided to the method, which has the effect of setting the category to `null` thus selecting all the products -->
+      <button (click)="changeCategory()"
+              class="btn btn-block btn-outline-primary">
+        Home
+      </button>
+      <button (click)="changeCategory(cat)"
+              *ngFor="let cat of categories"
+              [class.active]="cat == selectedCategory"
+              class="btn btn-outline-primary btn-block">
+        {{ cat }}
+      </button>
     </div>
     <div class="col-9 p-2">
       <!-- `*ngFor` is an example of a directive, which transforms the HTML element it is applied to

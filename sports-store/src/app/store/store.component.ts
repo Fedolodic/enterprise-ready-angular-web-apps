@@ -9,15 +9,21 @@ import {ProductRepository} from "../model/product.repository"
   templateUrl: "store.component.html"
 })
 export class StoreComponent {
+  public selectedCategory = null
+
   constructor(private repository: ProductRepository) {
   }
 
   /* The `products` and `categories` properties will be used to generate HTML content in the template, using data obtained from the repository */
   get products(): Product[] {
-    return this.repository.getProducts()
+    return this.repository.getProducts(this.selectedCategory)
   }
 
   get categories(): string[] {
     return this.repository.getCategories()
+  }
+
+  changeCategory(newCategory?: string) {
+    this.selectedCategory = newCategory
   }
 }
