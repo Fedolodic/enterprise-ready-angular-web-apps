@@ -33,6 +33,26 @@
           {{ product.description }}
         </div>
       </div>
+      <div class="form-inline float-left mr-1">
+        <select (change)="changePageSize($event.target.value)"
+                [value]="productsPerPage"
+                class="form-control">
+          <!-- Note: Here the `option` elements are statically defined, rather than created using data from the component
+          This causes when a selected value is passed to the `changePageSize` method, it will be a `string` value, which is why the argument is parsed to a `number` before being used to set the page size in store.component.ts -->
+          <option value="3">3 per Page</option>
+          <option value="4">4 per Page</option>
+          <option value="6">6 per Page</option>
+          <option value="8">8 per Page</option>
+        </select>
+      </div>
+      <div class="btn-group float-right">
+        <button (click)="changePage(page)"
+                *ngFor="let page of pageNumbers"
+                [class.active]="page == selectedPage"
+                class="btn btn-outline-primary">
+          {{ page }}
+        </button>
+      </div>
     </div>
   </div>
 </div>
