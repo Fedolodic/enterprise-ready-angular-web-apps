@@ -46,8 +46,10 @@
         </select>
       </div>
       <div class="btn-group float-right">
+        <!-- After registering the custom directive in the store module, it's used here to replace the `ngFor` directive
+         The new data binding relies on a property called `pageCount` to configure the custom directive -->
         <button (click)="changePage(page)"
-                *ngFor="let page of pageNumbers"
+                *counter="let page of pageCount"
                 [class.active]="page == selectedPage"
                 class="btn btn-outline-primary">
           {{ page }}

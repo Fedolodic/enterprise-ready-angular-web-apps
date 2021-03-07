@@ -30,11 +30,18 @@ export class StoreComponent {
     this.selectedCategory = newCategory
   }
 
-  get pageNumbers(): number[] {
+  /* We replaced the following commented code with `pageCount()` to demonstrate that it is possible to supplement the built-in Angular functionality with custom code that is tailored to the needs of a specific project
+  * i.e. There is no visual change to the SportsStore application*/
+  get pageCount(): number {
+    return Math.ceil(this.repository
+      .getProducts(this.selectedCategory).length / this.productsPerPage)
+  }
+
+  /*get pageNumbers(): number[] {
     return Array(Math.ceil(this.repository
       .getProducts(this.selectedCategory).length / this.productsPerPage))
       .fill(0).map((x, i) => i + 1)
-  }
+  }*/
 
   changePage(newPage: number) {
     this.selectedPage = newPage
