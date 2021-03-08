@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Hero } from '../hero'
-import { HEROES } from "../mock-heroes";
+import {Component, OnInit} from '@angular/core';
+import {Hero} from '../hero'
+import {HEROES} from "../mock-heroes";
 
 /* The CLI generated these 3 metadata properties:
 *   1. `selector` - the component's CSS element selector
@@ -14,15 +14,18 @@ import { HEROES } from "../mock-heroes";
 })
 /* Always `export` the component class so you can `import` it elsewhere ... like in the `AppModule` */
 export class HeroesComponent implements OnInit {
-  /* Add the `onSelect` click event handler */
   selectedHero?: Hero
+
+  /* Add the `onSelect` click event handler */
   onSelect(hero: Hero): void {
     this.selectedHero = hero
   }
+
   /* Defined a component property called `heroes` to expose the `HEROES` array for binding */
   heroes = HEROES
 
-  constructor() { }
+  constructor() {
+  }
 
   /* The `ngOnInit()` is a lifecycle hook
   * Angular calls `ngOnInit()` shortly after creating a component
