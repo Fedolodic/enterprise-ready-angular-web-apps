@@ -14,12 +14,11 @@ import {HEROES} from "../mock-heroes";
 })
 /* Always `export` the component class so you can `import` it elsewhere ... like in the `AppModule` */
 export class HeroesComponent implements OnInit {
-  /* Defined a component property called `heroes` to expose the `HEROES` array for binding */
-  heroes = HEROES
-
   constructor() {
   }
 
+  /* Defined a component property called `heroes` to expose the `HEROES` array for binding */
+  heroes = HEROES
   selectedHero?: Hero
 
   /* Add the `onSelect` click event handler */
