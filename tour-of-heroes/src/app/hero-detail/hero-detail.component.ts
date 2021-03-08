@@ -10,7 +10,7 @@ export class HeroDetailComponent implements OnInit {
   /* `hero` property must be an *Input* property, annotated with the `@Input()` decorator, because the *external* `HeroesComponent` will use property binding to bind the `hero` property in this component to `selectedHero` in `HeroesComponent` like this:
   * `<app-hero-detail [hero]="selectedHero"></app-hero-detail>`
   *
-  * This is a common pattern when sharing data between one or more child components */
+  * This is a common pattern when sharing data between a parent component and one or more child components */
   @Input() hero?: Hero
 
   constructor() {
