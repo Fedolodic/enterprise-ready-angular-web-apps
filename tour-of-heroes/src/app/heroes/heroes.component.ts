@@ -14,17 +14,17 @@ import {HEROES} from "../mock-heroes";
 })
 /* Always `export` the component class so you can `import` it elsewhere ... like in the `AppModule` */
 export class HeroesComponent implements OnInit {
+  /* Defined a component property called `heroes` to expose the `HEROES` array for binding */
+  heroes = HEROES
+
+  constructor() {
+  }
+
   selectedHero?: Hero
 
   /* Add the `onSelect` click event handler */
   onSelect(hero: Hero): void {
     this.selectedHero = hero
-  }
-
-  /* Defined a component property called `heroes` to expose the `HEROES` array for binding */
-  heroes = HEROES
-
-  constructor() {
   }
 
   /* The `ngOnInit()` is a lifecycle hook
