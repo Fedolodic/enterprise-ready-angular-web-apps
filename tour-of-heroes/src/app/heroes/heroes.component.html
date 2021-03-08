@@ -19,11 +19,15 @@
   Here when the current row hero is the same as the `selectedHero`, Angular adds the `selected` CSS class
   When the two heroes are different, Angular removes the class -->
   <li *ngFor="let hero of heroes"
-      [class.selected]="hero === selectedHero"
       (click)="onSelect(hero)">
+    [class.selected]="hero === selectedHero"
     <span class="badge">{{ hero.id }}</span> {{ hero.name }}
   </li>
 </ul>
 
 <!-- Add data binding to the new `hero` property -->
 <!--{{ hero }}-->
+
+<!-- This is an example of a *one-way* data binding from the `selectedHero` property to the `hero` property
+When the `selectedHero` changes, the *property binding* updates `hero` and the `HeroDetailComponent` displays a new hero -->
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>
