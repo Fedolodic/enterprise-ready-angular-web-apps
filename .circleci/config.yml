@@ -1,13 +1,14 @@
 version: 2.1
+general:
+  build_dir: ~/enterprise-ready-angular-web-apps/local-weather-app
 jobs:
   build:
     docker:
       - image: circleci/node:lts-browsers
     # I might need to change this later to something like ../ or ~/local-weather-app
-    working_directory: ~/local-weather-app
+    working_directory: ~/repo
     steps:
-      - checkout:
-          path: ~/local-weather-app
+      - checkout
 
       - restore_cache:
           keys:
