@@ -9,9 +9,9 @@ jobs:
       - checkout
 
 
-      - run: npm ci
+      - run: npm ci local-weather-app
 
-      - run: cd local-weather-app
+      #- run: cd local-weather-app
 
       - restore_cache:
           keys:
