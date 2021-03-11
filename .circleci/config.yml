@@ -4,7 +4,7 @@ jobs:
     docker:
       - image: circleci/node:lts-browsers
     # I might need to change this later to something like ../ or ~/local-weather-app
-    working_directory: ~/repo/local-weather-app
+    working_directory: ~/local-weather-app
     steps:
       - checkout
 
