@@ -22,7 +22,7 @@ jobs:
       - save_cache:
           key: v1-dependencies-{{ checksum "package-lock.json" }}
           paths:
-            - ~/.npm
+            - ~/local-weather-app/.npm
 
       - run: npm run style
       - run: npm run lint
