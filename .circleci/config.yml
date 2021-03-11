@@ -8,13 +8,14 @@ jobs:
     steps:
       - checkout
 
+
+      - run: npm ci
+
       - run: cd local-weather-app
 
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "package-lock.json" }}
-
-      - run: npm ci
 
       # force update the webdriver, so it runs with latest version of Chrome
       - run: cd ./node_modules/protractor && npm i webdriver-manager@latest
