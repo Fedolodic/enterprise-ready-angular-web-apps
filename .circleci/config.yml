@@ -4,7 +4,7 @@ jobs:
     docker:
       - image: circleci/node:lts-browsers
     # I might need to change this later to something like ../ or ~/local-weather-app
-    working_directory: ./local-weather-app
+    working_directory: ~/repo
     steps:
       - checkout
 
@@ -15,14 +15,14 @@ jobs:
       - run: npm ci
 
       # force update the webdriver, so it runs with latest version of Chrome
-      - run: cd ./node_modules/protractor && npm i webdriver-manager@latest
+      - run: cd local-weather-app/node_modules/protractor && npm i webdriver-manager@latest
 
       # because we use "npm ci" to install NPM dependencies
       # we cache "~/.npm" folder
       - save_cache:
           key: v1-dependencies-{{ checksum "package-lock.json" }}
           paths:
-            - ~/local-weather-app/.npm
+            - ~/.npm
 
       - run: npm run style
       - run: npm run lint
