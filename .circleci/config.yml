@@ -3,22 +3,19 @@ jobs:
   build:
     docker:
       - image: circleci/node:lts-browsers
-    # I might need to change this later to something like ../ or ~/local-weather-app
-    working_directory: ~/repo
+    working_directory: ~/enterprise-ready-angular-web-apps/local-weather-app
     steps:
-      - checkout
-
-
-      - run: npm ci local-weather-app
-
-      #- run: cd local-weather-app
+      - checkout:
+          path: ~/enterprise-ready-angular-web-apps
 
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "package-lock.json" }}
 
+      - run: npm ci
+
       # force update the webdriver, so it runs with latest version of Chrome
-      - run: cd ./node_modules/protractor && npm i webdriver-manager@latest
+      # - run: cd ./node_modules/protractor && npm i webdriver-manager@latest
 
       # because we use "npm ci" to install NPM dependencies
       # we cache "~/.npm" folder
