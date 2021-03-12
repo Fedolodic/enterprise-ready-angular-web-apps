@@ -36,6 +36,8 @@ jobs:
           command: tar zcf dist.tar.gz dist/local-weather-app
       - store_artifacts:
           path: dist.tar.gz
+
+      - run: npm run deploy
 workflows:
   version: 2
   build-and-test:

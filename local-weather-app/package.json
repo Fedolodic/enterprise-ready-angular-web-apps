@@ -11,7 +11,8 @@
     "lint:fix": "tslint --config tslint.json --fix --project . -e \"**/{test,polyfills}.ts\"",
     "e2e": "ng e2e",
     "style:fix": "import-sort --write \"**/{src,tests,e2e}/**/*.ts\" && prettier --write \"**/{src,tests,e2e}/**/*.{*css,ts}\" && js-beautify \"**/src/**/*.html\"",
-    "style": "import-sort -l \"**/{src,tests,e2e}/**/*.ts\" && prettier --check \"**/{src,tests,e2e}/**/*.{*css,ts}\""
+    "style": "import-sort -l \"**/{src,tests,e2e}/**/*.ts\" && prettier --check \"**/{src,tests,e2e}/**/*.{*css,ts}\"",
+    "deploy": "npx vercel --prod dist/local-weather-app --confirm"
   },
   "private": true,
   "dependencies": {
@@ -56,7 +57,8 @@
     "tslint-config-prettier": "^1.18.0",
     "tslint-etc": "^1.13.9",
     "tslint-plugin-prettier": "^2.3.0",
-    "typescript": "~4.1.2"
+    "typescript": "~4.1.2",
+    "vercel": "^21.3.3"
   },
   "importSort": {
     "ts, .tsx": {
