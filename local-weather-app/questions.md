@@ -108,7 +108,7 @@
 
 > Mike Cohn's Testing Pyramid effectively summarizes the relative number of tests of each kind we should create for our applications, taking into account their speed and costs.
 >
-> TESTING PYRAMID IMG
+> ![Testing Pyramid](https://user-images.githubusercontent.com/12787345/112358945-c99a8300-8c9e-11eb-8c99-9e8563be48eb.jpg)
 >
 > Automating UI tests is costly, because of the risk of high change, making them brittle. In addition, their execution time is slow, each test taking multiple seconds. This forces developers to wait dozens of minutes before they can iterate over changes. As a result, you should implement multiple orders of magnitude fewer tests than your unit tests.
 >
@@ -127,7 +127,7 @@
 >
 > Note: Jasmine is a behavior-driven testing framework for browser and Node.js tests. It supports elemental unit testing needs such as test fixtures, asserts, mocks, spies, and reporters. Tests are organized in `describe` blocks, which can be grouped in levels to reflect the structure of a file, class, or multiple tests that belong to a single function. Individual test cases, or specs, are represented in `it` blocks. Specs are organized in a manner so that when they execute, they read like a sentence. E.g.:
 >
-> JASMINE TEST IMG
+> ![Jasmine Test](https://user-images.githubusercontent.com/12787345/112359130-f353aa00-8c9e-11eb-94fe-e98816ca6395.jpg)
 >
 > Should read, *Converters convertCtoF should convert 0c to 32f*.
 
@@ -199,7 +199,7 @@
 
 > As GitHub puts it, "GitHub flow is a lightweight, branch-based workflow that supports teams and projects where deployments are made regularly." GitHub flow consists of 6 steps, as shown in the following graphic from GitHub:
 >
-> GITHUB FLOW IMG
+> ![GitHub Flow](https://user-images.githubusercontent.com/12787345/112360800-b25c9500-8ca0-11eb-8ffb-69134913ec4d.png)
 >
 > 1. Branch - always add new code for a bug or feature in a new branch.
 > 2. Commit - make multiple commits to your branch.
