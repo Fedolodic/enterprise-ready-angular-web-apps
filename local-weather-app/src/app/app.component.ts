@@ -4,7 +4,7 @@ import {Component} from '@angular/core'
   selector: 'app-root',
   template: `
     <div style="text-align: center">
-      <mat-toolbar>
+      <mat-toolbar color="primary">
         <span>Weather 24/7</span>
       </mat-toolbar>
       <div><b>Some type of slogan, or tagline! I'm going to be changing this tho 🥳</b></div>
