@@ -3,12 +3,25 @@ import {Component} from '@angular/core'
 @Component({
   selector: 'app-root',
   template: `
-    <div style="text-align: center">
+    <div>
       <mat-toolbar color="primary">
         <span>Weather 24/7</span>
       </mat-toolbar>
-      <div><b>Some type of slogan, or tagline! I'm going to be changing this tho 🥳</b></div>
-      <app-current-weather></app-current-weather>
+      <div><b>24-Hour Forecasts</b></div>
+      <div fxLayout="row">
+        <div fxFlex></div>
+        <div fxFlex="300px">
+          <mat-card>
+            <mat-card-title>
+              Current Weather
+            </mat-card-title>
+            <mat-card-content>
+              <app-current-weather></app-current-weather>
+            </mat-card-content>
+          </mat-card>
+        </div>
+        <div fxFlex></div>
+      </div>
       <div>Weekly Forecast</div>
     </div>`,
 })
