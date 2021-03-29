@@ -1,12 +1,12 @@
 /* This file contains any CSS that is specific to the component and is an optional file */
 .right {
-  text-align: right
+  text-align: right;
 }
 
 .no-margin {
-  margin-bottom: 0
+  margin-bottom: 0;
 }
 
 .unit {
-  vertical-align: super
+  vertical-align: super;
 }
