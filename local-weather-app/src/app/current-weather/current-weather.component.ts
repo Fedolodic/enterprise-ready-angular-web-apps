@@ -16,7 +16,13 @@ export class CurrentWeatherComponent implements OnInit {
    * It's good to know that it exists though */
   current!: ICurrentWeather
 
-  constructor(private weatherService: WeatherService) {}
+  constructor(private weatherService: WeatherService) {
+  }
+
+  getOrdinal(date: number) {
+    const n = new Date(date).getDate()
+    return n > 0 ? ['th', 'st', 'nd', 'rd'][(n > 3 && n < 21) || n % 10 > 3 ? 0 : n % 10] : ''
+  }
 
   ngOnInit(): void {
     this.weatherService
