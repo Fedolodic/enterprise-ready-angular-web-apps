@@ -1,8 +1,8 @@
-import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout'
-import {map, shareReplay} from 'rxjs/operators'
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout'
+import { map, shareReplay } from 'rxjs/operators'
 
-import {Component} from '@angular/core'
-import {Observable} from 'rxjs'
+import { Component } from '@angular/core'
+import { Observable } from 'rxjs'
 
 @Component({
   selector: 'app-side-nav',
@@ -17,6 +17,5 @@ export class SideNavComponent {
       shareReplay()
     )
 
-  constructor(private breakpointObserver: BreakpointObserver) {
-  }
+  constructor(private breakpointObserver: BreakpointObserver) {}
 }
