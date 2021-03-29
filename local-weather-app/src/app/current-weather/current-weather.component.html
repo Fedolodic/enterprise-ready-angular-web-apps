@@ -5,15 +5,15 @@ Below we are implementing null guarding with *ngIf, a structural directive, i.e.
   no data
 </div>
 <div *ngIf="current">
-  <div>
-    <span>{{current.city}}, {{current.country}} </span>
-    <span>{{current.date | date: 'fullDate'}}</span>
+  <div fxLayout="row">
+    <div fxFlex="66%">{{current.city}}, {{current.country}} </div>
+    <div fxFlex>{{current.date | date: 'fullDate'}}</div>
   </div>
-  <div>
-    <img [src]="current.image" alt="Sun clipart">
-    <span>{{current.temperature | number: '1.0-0'}}°F
-      <!--(&#8457;)-->
-    </span>
+  <div fxLayout="row">
+    <div fxFlex="66%">
+      <img [src]="current.image" alt="Sun clipart">
+    </div>
+    <div fxFlex>{{current.temperature | number: '1.0-0'}}°F</div>
   </div>
   <div>
     {{current.description}}
