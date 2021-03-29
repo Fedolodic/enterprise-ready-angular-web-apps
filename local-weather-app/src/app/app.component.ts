@@ -7,7 +7,11 @@ import {Component} from '@angular/core'
       <mat-toolbar color="primary">
         <span>Weather 24/7</span>
       </mat-toolbar>
-      <div><b>24-Hour Forecasts</b></div>
+      <div fxLayoutAlign="center">
+        <div class="mat-caption">
+          24-Hour Forecasts
+        </div>
+      </div>
       <div fxLayout="row">
         <div fxFlex></div>
         <mat-card fxFlex="300px">
