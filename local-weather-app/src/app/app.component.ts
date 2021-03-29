@@ -8,8 +8,8 @@ import {Component} from '@angular/core'
         <span>Weather 24/7</span>
       </mat-toolbar>
       <div fxLayoutAlign="center">
-        <div class="mat-caption">
-          24-Hour Forecasts
+        <div class="mat-caption vertical-margin">
+          24-Hour Forecasts!
         </div>
       </div>
       <div fxLayout="row">
