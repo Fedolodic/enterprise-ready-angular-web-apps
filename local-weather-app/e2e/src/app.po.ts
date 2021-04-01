@@ -1,4 +1,4 @@
-import { browser, by, element } from 'protractor'
+import {browser, by, element} from 'protractor'
 
 /* This page object file encapsulates web driver implementation to retrieve the message with the `getTitleText` function */
 export class AppPage {
