@@ -1,13 +1,13 @@
 /* This file contains Jasmine-based unit tests that you can extend to test your component functionality */
-import {ComponentFixture, TestBed} from '@angular/core/testing'
+import { ComponentFixture, TestBed } from '@angular/core/testing'
 
-import {By} from '@angular/platform-browser'
-import {CurrentWeatherComponent} from './current-weather.component'
-import {HttpClientTestingModule} from '@angular/common/http/testing'
-import {WeatherService} from '../weather/weather.service'
-import {fakeWeather} from '../weather/weather.service.fake'
-import {injectSpy} from 'angular-unit-test-helper'
-import {of} from 'rxjs'
+import { By } from '@angular/platform-browser'
+import { CurrentWeatherComponent } from './current-weather.component'
+import { HttpClientTestingModule } from '@angular/common/http/testing'
+import { WeatherService } from '../weather/weather.service'
+import { fakeWeather } from '../weather/weather.service.fake'
+import { injectSpy } from 'angular-unit-test-helper'
+import { of } from 'rxjs'
 
 describe('CurrentWeatherComponent', () => {
   let component: CurrentWeatherComponent
