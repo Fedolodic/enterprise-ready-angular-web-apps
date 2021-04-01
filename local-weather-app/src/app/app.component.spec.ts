@@ -1,4 +1,5 @@
 import { AppComponent } from './app.component'
+import { MaterialModule } from './material.module'
 import { TestBed } from '@angular/core/testing'
 import { createComponentMock } from 'angular-unit-test-helper'
 
@@ -8,6 +9,7 @@ describe('AppComponent', () => {
       /* Declarations allow us to provide all components necessary to render the component under test
        * i.e. they build component classes, along with their template logic, to facilitate testing */
       declarations: [AppComponent, createComponentMock('CurrentWeatherComponent')],
+      imports: [MaterialModule],
     }).compileComponents()
   })
 
@@ -27,6 +29,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent)
     fixture.detectChanges()
     const compiled = fixture.nativeElement
-    expect(compiled.querySelector('h1').textContent).toContain('Weather 24/7')
+    expect(compiled.querySelector('span').textContent).toContain('Weather 24/7')
   })
 })
